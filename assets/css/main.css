@@ -3907,48 +3907,52 @@ input, select, textarea {
 			}
 
 		}
-/* Academic Portfolio - Custom Layout Fixes */
 
-/* Allow content to shrink without overflowing */
-#one > section > .content {
-    min-width: 0;
-}
+/* Academic portfolio: allow longer coursework sections and project links. */
 
-/* Keep image panels from being compressed */
-@media screen and (min-width: 737px) {
-    #one > section > .image {
-        flex-shrink: 0;
-    }
-}
+	#one > section > .content {
+		min-width: 0;
+	}
 
-/* Organize project buttons into a responsive grid */
-#one ul.actions {
-    display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(min(100%, 14rem), 1fr)
-    );
-    gap: 0.75rem;
-    margin: 1.5rem 0 0;
-    padding: 0;
-}
+	/* Use a stable image/content split on desktop without affecting the
+	   template's stacked mobile layout. */
+	@media screen and (min-width: 981px) {
+		#one > section > .image {
+			flex: 0 0 30%;
+			width: 30%;
+		}
 
-/* Remove the original button spacing */
-#one ul.actions > li {
-    padding: 0;
-    min-width: 0;
-}
+		#one > section > .content {
+			flex: 1 1 70%;
+			width: 70%;
+		}
+	}
 
-/* Allow longer button labels to wrap */
-#one ul.actions .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    min-height: 3.75em;
-    padding: 0.75em 1em;
-    line-height: 1.4;
-    white-space: normal;
-    text-align: center;
-}
+	/* Replace the non-wrapping action row with responsive button columns. */
+	#one ul.actions {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+		gap: 0.75rem;
+		width: 100%;
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	#one ul.actions > li {
+		padding: 0;
+		min-width: 0;
+		display: flex;
+	}
+
+	#one ul.actions .button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: auto;
+		min-height: calc(4.75em + 2px);
+		padding: 0.9em 1.2em;
+		line-height: 1.4;
+		white-space: normal;
+		text-align: center;
+	}
