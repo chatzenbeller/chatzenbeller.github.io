@@ -3327,3 +3327,31 @@ input, select, textarea {
 			}
 
 		}
+
+/* Academic Portfolio: homepage technology-track tiles
+   Moved from index.html to keep all styling in assets/css/main.css.
+   Retains Phantom's built-in tile colors and hover effects. */
+
+#main .tiles.track-tiles {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5em;
+    margin: 0;
+}
+
+#main .tiles.track-tiles article {
+    width: 100%;
+    margin: 0;
+}
+
+@media screen and (max-width: 1280px) {
+    #main .tiles.track-tiles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #main .tiles.track-tiles {
+        grid-template-columns: 1fr;
+    }
+}
