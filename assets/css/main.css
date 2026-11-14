@@ -3355,3 +3355,41 @@ input, select, textarea {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* Academic portfolio — course directory and course-detail pages.
+   Shared across all four tracks; no styles embedded in HTML. */
+.breadcrumbs { font-size: 0.8em; color: #777; margin: 0 0 1.6em; }
+.breadcrumbs a { color: #575757; }
+.track-heading { max-width: 52em; margin: 0 0 2.2em; }
+.track-heading h1 { margin-bottom: 0.35em; }
+.track-heading p { margin-bottom: 0; }
+.course-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.4em; }
+.course-card { display: flex; flex-direction: column; min-width: 0; min-height: 15em; border: 1px solid #ddd !important; border-radius: 0.5em; padding: 1.65em; background: #fafafa; text-decoration: none; transition: box-shadow .2s, transform .2s, border-color .2s; }
+.course-card:hover, .course-card:focus-visible { border-color: #f2849e !important; box-shadow: 0 0.5em 1.7em rgba(0,0,0,.08); transform: translateY(-3px); }
+.course-card__category { color: #858585; font-size: 0.72em; font-weight: 700; text-transform: uppercase; letter-spacing: .11em; margin-bottom: 1em; }
+.course-card h2 { font-size: 1.02em; line-height: 1.4; letter-spacing: .06em; margin: 0 0 .55em; text-transform: none; }
+.course-card p { font-size: .9em; margin: 0 0 1.3em; color: #666; }
+.course-card__link { display: block; margin-top: auto; color: #b44367; font-weight: 700; font-size: .76em; text-transform: uppercase; letter-spacing: .07em; }
+.course-hero { max-width: 56em; margin: 0 0 2.4em; }
+.course-hero .eyebrow { display: block; color: #a34867; font-size: .75em; text-transform: uppercase; font-weight: 700; letter-spacing: .12em; margin-bottom: 1em; }
+.course-hero h1 { margin: 0 0 .35em; }
+.course-hero p { font-size: 1.04em; margin-bottom: 0; max-width: 50em; }
+.course-columns { display: grid; grid-template-columns: minmax(13em, 1fr) minmax(0,2.1fr); gap: 3em; align-items: start; }
+.course-columns h2 { font-size: .85em; line-height: 1.45; margin: 0 0 1.5em; letter-spacing: .16em; }
+.course-skills { background: #fafafa; border: 1px solid #eee; padding: 1.6em; border-radius: .5em; }
+.skill-list { list-style: none; margin: 0; padding: 0; }
+.skill-list li { margin: 0 0 .75em; border-bottom: 1px solid #e3e3e3; padding: 0 0 .75em; font-size: .9em; }
+.skill-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.course-skills p { font-size: .85em; }
+.artifact { display: grid; grid-template-columns: minmax(0, 1fr); gap: .6em; border-bottom: 1px solid #e0e0e0; padding: 0 0 1.6em; margin-bottom: 1.6em; }
+.artifact h3 { font-size: .95em; text-transform: none; letter-spacing: .01em; margin: 0 0 .5em; line-height: 1.4; }
+.artifact p { margin: 0; font-size: .9em; }
+.artifact__links { display: flex; gap: .75em; flex-wrap: wrap; margin-top: .6em; }
+.artifact-link { display: inline-flex; align-items: center; border: 1px solid #ddd; border-radius: 3em; padding: .55em 1.1em; color: #6d3b59; font-size: .72em; font-weight: 700; text-decoration: none; line-height: 1.4; }
+.artifact-link:hover { border-color: #f2849e; background-color: #fff7f9; }
+.artifact-note { border-left: .2em solid #e5a1b5; padding: .7em 0 .7em 1em; font-size: .83em; background: #faf6f7; }
+.no-artifacts { color: #747474; font-size: .9em; }
+.back-link { margin-top: 2.5em; }
+@media screen and (max-width: 980px) { .course-columns { grid-template-columns: 1fr; gap: 2em; } }
+@media screen and (max-width: 736px) { .course-grid { grid-template-columns: 1fr; } .course-card { min-height: 12em; } .course-hero h1 { font-size: 2em; } }
