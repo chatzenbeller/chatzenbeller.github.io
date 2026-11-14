@@ -1,0 +1,444 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.1" RunE2="T">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="30" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">.\\inputs\\PackExpo23.xlsx|||`in$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>PackExpo23.xlsx
+Query=`in$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="date" source="File: .\\inputs\\PackExpo23.xlsx|||`in$`" type="Date" />
+            <Field name="first name" size="255" source="File: .\\inputs\\PackExpo23.xlsx|||`in$`" type="V_String" />
+            <Field name="last name" size="255" source="File: .\\inputs\\PackExpo23.xlsx|||`in$`" type="V_String" />
+            <Field name="phone" size="255" source="File: .\\inputs\\PackExpo23.xlsx|||`in$`" type="V_String" />
+            <Field name="email" size="255" source="File: .\\inputs\\PackExpo23.xlsx|||`in$`" type="V_String" />
+            <Field name="company" size="255" source="File: .\\inputs\\PackExpo23.xlsx|||`in$`" type="V_String" />
+            <Field name="address" size="255" source="File: .\\inputs\\PackExpo23.xlsx|||`in$`" type="V_String" />
+            <Field name="city" size="255" source="File: .\\inputs\\PackExpo23.xlsx|||`in$`" type="V_String" />
+            <Field name="state" size="255" source="File: .\\inputs\\PackExpo23.xlsx|||`in$`" type="V_String" />
+            <Field name="postalZip" size="255" source="File: .\\inputs\\PackExpo23.xlsx|||`in$`" type="V_String" />
+            <Field name="country" size="255" source="File: .\\inputs\\PackExpo23.xlsx|||`in$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="30" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">.\\inputs\\states(1).xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>states(1).xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Country Code" size="255" source="File: .\\inputs\\states(1).xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="State/Province Code" size="255" source="File: .\\inputs\\states(1).xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="State/Province Name" size="255" source="File: .\\inputs\\states(1).xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings>
+        <Position x="114" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">True</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"Country Code","State/Province Code","State/Province Name"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="198" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="state" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="State/Province Name" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_date" selected="True" input="Left_" />
+                <SelectField field="Left_first name" selected="True" input="Left_" />
+                <SelectField field="Left_last name" selected="True" input="Left_" />
+                <SelectField field="Left_phone" selected="True" input="Left_" />
+                <SelectField field="Left_email" selected="True" input="Left_" />
+                <SelectField field="Left_company" selected="True" input="Left_" />
+                <SelectField field="Left_address" selected="True" input="Left_" />
+                <SelectField field="Left_city" selected="True" input="Left_" />
+                <SelectField field="Left_state" selected="True" input="Left_" />
+                <SelectField field="Left_postalZip" selected="True" input="Left_" />
+                <SelectField field="Left_country" selected="True" input="Left_" />
+                <SelectField field="Right_Country Code" selected="True" input="Right_" />
+                <SelectField field="Right_State/Province Code" selected="True" input="Right_" />
+                <SelectField field="Right_State/Province Name" selected="True" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="294" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>phone</Field>
+          <RegExExpression value="\&lt;1-" />
+          <CaseInsensitve value="True" />
+          <Method>Replace</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="False" />
+            <RootName>phone</RootName>
+            <NumFields value="3" />
+            <ErrorHandling>Warn</ErrorHandling>
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="No Marked Groups Found" type="No Marked Groups Found" size="No Marked Groups Found" />
+          </ParseComplex>
+          <Match>
+            <Field>date_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="30" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">.\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>chatzenb_M5.xlsx
+Query=`Lead Data$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="EventID" size="255" source="File: .\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`" type="V_String" />
+            <Field name="date" source="File: .\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`" type="Date" />
+            <Field name="first name" size="255" source="File: .\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`" type="V_String" />
+            <Field name="last name" size="255" source="File: .\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`" type="V_String" />
+            <Field name="phone" size="255" source="File: .\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`" type="V_String" />
+            <Field name="email" size="255" source="File: .\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`" type="V_String" />
+            <Field name="company" size="255" source="File: .\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`" type="V_String" />
+            <Field name="address" size="255" source="File: .\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`" type="V_String" />
+            <Field name="city" size="255" source="File: .\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`" type="V_String" />
+            <Field name="state" size="255" source="File: .\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`" type="V_String" />
+            <Field name="postalZip" size="255" source="File: .\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`" type="V_String" />
+            <Field name="country" size="255" source="File: .\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`" type="V_String" />
+            <Field name="sales force" size="255" source="File: .\\inputs\\chatzenb_M5.xlsx|||`Lead Data$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="102" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>.\\inputs\\Engine_14752_606c9a751225604985943093091eb31a~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="366" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;PackExpo23&quot;" field="eventID" size="1073741823" type="V_WString" enabled="true" />
+            <FormulaField expression="IF [Country Code] = &quot;US&quot; THEN &quot;Industrial&quot; ELSE &quot;International&quot; ENDIF" field="sales force" size="1073741823" type="V_WString" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>eventID = "PackExpo23"
+sales force = IF [Country Code] = "US" THEN "Industrial" ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="450" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="eventID" selected="True" />
+            <SelectField field="date" selected="True" />
+            <SelectField field="first name" selected="True" />
+            <SelectField field="last name" selected="True" />
+            <SelectField field="phone" selected="True" />
+            <SelectField field="email" selected="True" />
+            <SelectField field="company" selected="True" />
+            <SelectField field="address" selected="True" />
+            <SelectField field="city" selected="True" />
+            <SelectField field="State/Province Code" selected="True" rename="state" />
+            <SelectField field="state" selected="False" />
+            <SelectField field="postalZip" selected="True" />
+            <SelectField field="country" selected="False" />
+            <SelectField field="Country Code" selected="True" rename="country" />
+            <SelectField field="State/Province Name" selected="False" />
+            <SelectField field="sales force" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="534" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="first name" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>first name - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="606" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>.\\inputs\\Engine_14752_32cd6fb0decd5f42b540bdd98ea00106~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="10" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output26" />
+      <Destination ToolID="10" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Join" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>chatzenb_M8</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="c763608f-45f9-4c11-9310-460cc06393a9" />
+      <Telemetry>
+        <PreviousWorkflowId value="db0b078e-0520-44a1-9b39-358222bb3225" />
+        <OriginWorkflowId value="db0b078e-0520-44a1-9b39-358222bb3225" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
