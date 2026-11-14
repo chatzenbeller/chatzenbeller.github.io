@@ -3401,3 +3401,12 @@ input, select, textarea {
 .future-course-list li { padding: .65em 0; border-bottom: 1px solid #e5e5e5; }
 .future-course-list li:last-child { border-bottom: 0; }
 .course-columns--single { display: block; max-width: 52em; }
+
+/* M8 case study: keep related supporting files under one project */
+.case-study-files { margin: 1em 0 .2em; border: 1px solid #e5e5e5; border-radius: .45em; padding: .7em 1em; background: #fafafa; font-size: .88em; }
+.case-study-files summary { cursor: pointer; font-weight: 700; color: #585858; }
+.case-study-files[open] summary { margin-bottom: .6em; }
+.case-study-files ul { margin: 0 0 .6em 1.2em; list-style: disc; }
+.case-study-files li { padding-left: .2em; margin-bottom: .3em; }
+.case-study-files p { font-size: .92em; margin: .75em 0 0; }
+.case-study-files code { overflow-wrap: anywhere; }
